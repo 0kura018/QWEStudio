@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши игры</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition-in">
+    <header>
+        <h1>Наши игры</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="page3.html" class="page-transition">Наши игры</a></li>
+            <li><a href="index.html" class="page-transition">QWE Studio</a></li>
+            <li><a href="page2.html" class="page-transition">Steam Hero</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="gallery">
+            <div class="image">
+                <a href="https://yandex.ru/games/app/242843?lang=ru"> <img src="typeFaster.png" alt="Печатай Быстрее!"> </a>
+                <div class="caption">
+                    <h3>Печатай Быстрее!</h3>
+                    <p>Научись печатать быстрее!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://0kura018.itch.io/investigation-from-a-different-angle"> <img src="Investigation.png" alt="Расследование"> </a>
+                <div class="caption">
+                    <h3>Расследование</h3>
+                    <p>Проведи расследование и расскрой дело!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://yandex.ru/games/app/269559?lang=ru.html"> <img src="hellOrHeven.png" alt="Судья междумирья"> </a>
+                <div class="caption">
+                    <h3>Судья междумирья</h3>
+                    <p>Решай куда отправится подсудимый, в Ад или в Рай?</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://yandex.ru/games/app/250777?lang=ru.html"> <img src="glassOfBlood.png" alt="Стакан крови"> </a>
+                <div class="caption">
+                    <h3>Стакан крови</h3>
+                    <p>Ты бармер в баре самой Сметри!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://yandex.ru/games/app/251449?lang=ru.html"> <img src="shootAndHide.png" alt="Стреляй и прячься"> </a>
+                <div class="caption">
+                    <h3>Стреляй и прячься</h3>
+                    <p>Спрячься от детектива, играя за пистолет убийцы!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://yandex.ru/games/app/258464?lang=ru.html"> <img src="animeQuiz.png" alt="Аниме Викторина"> </a>
+                <div class="caption">
+                    <h3>Аниме Викторина</h3>
+                    <p>Отгадай аниме по картинке!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://yandex.ru/games/app/293194?lang=ru.html"> <img src="callNagets.png" alt="Звонок Наггетсу"> </a>
+                <div class="caption">
+                    <h3>Звонок Наггетсу</h3>
+                    <p>Позвони Наггетсу и его друзьям! Йиииихаааа!</p>
+                </div>
+            </div>
+            <div class="image">
+                <a href="https://gamejolt.com/games/FNID1/855299.html"> <img src="durka.png" alt="5 ночей в дурке"> </a>
+                <div class="caption">
+                    <h3>5 ночей в дурке</h3>
+                    <p>Проживи 5 ночей с сумашедшими!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 QWE Studio</p>
+    </footer>
+    <script>
+        document.addEventListener(function () {
+            const links = document.querySelectorAll('.page-transition');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    // Добавляем класс для анимации исчезновения на текущей странице
+                    document.body.classList.add('page-transition-out');
+
+                    // После завершения анимации перенаправляем на новую страницу
+                    document.body.addEventListener('transitionend', function () {
+                        window.location.href = href;
+                    }, { once: true });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

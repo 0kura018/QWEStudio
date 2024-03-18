@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>QWE Studio: Steam Hero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-transition-in">
+    <header>
+        <h1>Steam Hero</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="page3.html" class="page-transition">Наши игры</a></li>
+            <li><a href="index.html" class="page-transition">QWE Studio</a></li>
+            <li><a href="page2.html" class="page-transition">Steam Hero</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Новая игра, в жанре Rogue Like в 2D с видом с боку!</h2>
+            <p>Игра разрабатывается совсем не долго, но вы уже можете потестить начальный результат! <a href="https://0kura018.itch.io/steam-hero"> Steam Hero </a>.</p>
+
+            <img src="SteamHero.png" alt="SteamHero">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 QWE Studio</p>
+    </footer>
+     <script>
+        document.addEventListener(function() {
+            const links = document.querySelectorAll('.page-transition');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const href = this.getAttribute('href');
+
+                    // Добавляем класс для анимации исчезновения на текущей странице
+                    document.body.classList.add('page-transition-out');
+
+                    // После завершения анимации перенаправляем на новую страницу
+                    document.body.addEventListener('transitionend', function() {
+                        window.location.href = href;
+                    }, { once: true });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

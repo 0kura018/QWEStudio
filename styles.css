@@ -1,0 +1,181 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #0f0f0f;
+	color: #fff;
+	min-height: 100vh; /* Минимальная высота страницы на весь экран */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+header {
+	background-color: #333;
+	padding: 10px;
+	text-align: center;
+}
+
+	header h1 {
+		font-size: 125px; /* Увеличение размера текста */
+		margin-bottom: 30px; /* Дополнительный отступ снизу */
+		margin-top: 10px;
+	}
+
+
+h1, h2, h3 {
+	font-family: 'Press Start 2P', cursive;
+}
+
+nav {
+	background-color: #222;
+	padding: 10px 0;
+	text-align: center;
+}
+
+	nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+		nav ul li {
+			display: inline;
+			margin-right: 40px;
+			text-align: center;
+		}
+
+			nav ul li a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 30px;
+				transition: all 0.3s ease;
+				text-align: center;
+			}
+
+				nav ul li a:hover {
+					color: #ff0;
+					font-size: 45px;
+				}
+
+main {
+	padding: 20px;
+	text-align: center;
+	font-size: 24px;
+	flex: 1;
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
+
+img {
+	max-width: 745px;
+	align-content: center;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.image {
+	margin: 50px;
+	width: 300px;
+		height: 300px;
+	position: relative;
+	overflow: hidden; /* Чтобы описание не выходило за пределы изображения */
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+	.image img {
+		width: 296px;
+		height: 296px;
+		border-radius: 10px;
+		border: 2px solid transparent; /* Вернуть старый контур картинки */
+		transition: border-color 0.3s ease; /* Плавность анимации */
+	}
+
+	.image:hover img {
+		border-color: #ff0; /* Изменение цвета контура при наведении */
+	}
+
+
+.caption {
+	position: absolute;
+	width: calc(100% - 20px);
+	bottom: -50px; /* Скрытие описания */
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	transition: bottom 0.3s ease, visibility 0.3s ease, opacity 0.3s ease; /* Анимация для плавного появления и исчезновения описания */
+	visibility: hidden; /* Скрытие описания */
+	opacity: 0; /* Скрытие описания */
+}
+
+.image:hover .caption {
+	bottom: 0px; /* Отображение описания при наведении */
+	visibility: visible; /* Отображение описания при наведении */
+	opacity: 1; /* Отображение описания при наведении */
+}
+
+.caption h3,
+.caption p {
+	margin: 5px 0;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	flex-shrink: 0; /* Закрепляем футер внизу, он не будет сжиматься при увеличении контента */
+	position: fixed; /* Зафиксированное позиционирование */
+	width: 100%; /* Ширина футера на всю ширину экрана */
+	bottom: 0; /* Футер прижимается к нижнему краю экрана */
+}
+
+/* Стили для анимации исчезновения */
+.page-transition-out {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.page-transition-in {
+	opacity: 0;
+	animation: pageFadeIn 1s forwards;
+}
+
+@keyframes pageFadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes pageFadeOut {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
