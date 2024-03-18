@@ -20,34 +20,35 @@
 
     <main>
         <section>
-            <h2>Небольшая команла разработчиков игр на Яндекс Игры и не только!</h2>
+            <h2>Небольшая команда разработчиков игр на Яндекс Игры и не только!</h2>
 
-            <img src="QWEIcon.png" alt="QWEStudio">
+            <img src="QWEIcon.png" alt="QWEStudio" class="logo">
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 QWE Studio</p>
     </footer>
+    
     <script>
-    document.addEventListener(function () {
-        const links = document.querySelectorAll('.page-transition');
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('.page-transition');
 
-        links.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const href = this.getAttribute('href');
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const href = this.getAttribute('href');
 
-                // Добавляем класс для анимации исчезновения на текущей странице
-                document.body.classList.add('page-transition-out');
+                    // Добавляем класс для анимации исчезновения на текущей странице
+                    document.body.classList.add('page-transition-out');
 
-                setTimeout(() => {
-                    // Перенаправляем на новую страницу
-                    window.location.href = href;
-                }, 100); // Время анимации исчезновения в миллисекундах
+                    setTimeout(() => {
+                        // Перенаправляем на новую страницу
+                        window.location.href = href;
+                    }, 100); // Время анимации исчезновения в миллисекундах
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
