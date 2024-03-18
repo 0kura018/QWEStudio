@@ -84,24 +84,24 @@
         <p>&copy; 2024 QWE Studio</p>
     </footer>
     <script>
-        document.addEventListener(function () {
-            const links = document.querySelectorAll('.page-transition');
+    document.addEventListener(function () {
+        const links = document.querySelectorAll('.page-transition');
 
-            links.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const href = this.getAttribute('href');
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const href = this.getAttribute('href');
 
-                    // Добавляем класс для анимации исчезновения на текущей странице
-                    document.body.classList.add('page-transition-out');
+                // Добавляем класс для анимации исчезновения на текущей странице
+                document.body.classList.add('page-transition-out');
 
-                    // После завершения анимации перенаправляем на новую страницу
-                    document.body.addEventListener('transitionend', function () {
-                        window.location.href = href;
-                    }, { once: true });
-                });
+                setTimeout(() => {
+                    // Перенаправляем на новую страницу
+                    window.location.href = href;
+                }, 500); // Время анимации исчезновения в миллисекундах
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
